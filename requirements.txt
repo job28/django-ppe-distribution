@@ -1,0 +1,9 @@
+Django>=4.2,<5.1
+django-environ>=0.11
+psycopg2-binary>=2.9 ; platform_system != "Windows"
+gunicorn>=21.2
+# Optional dev/test
+pytest>=8.0
+pytest-django>=4.7
+black>=24.0
+ruff>=0.5

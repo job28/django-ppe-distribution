@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Order {{ item.name }}</h2>
+
+<div class="card p-4 shadow-sm">
+    <form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+        {% if not field.is_hidden %}
+            <div class="mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                <div class="text-danger">{{ field.errors }}</div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Place Order</button>
+</form>
+</div>
+{% endblock %}

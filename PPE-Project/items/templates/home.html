@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Welcome to the PPE Donation Portal</h1>
+    <p class="lead">Access surplus PPE gear donated by Irish Rail.<br>
+       Make a small donation and support local communities.</p>
+    <a href="{% url 'items_index' %}" class="btn btn-success btn-lg mt-3">View Available Items</a>
+</div>
+{% endblock %}

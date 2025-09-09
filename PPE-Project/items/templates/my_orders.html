@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">My Orders</h2>
+
+    {% if orders %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Pickup Hub</th>
+                <th>Pickup Date/Time</th>
+                <th>Ordered At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.item.name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.pickup_hub.name }}</td>
+                <td>{{ order.pickup_datetime }}</td>
+                <td>{{ order.ordered_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>You haven’t placed any orders yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
